@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A través del tiempo</title>
+    <style>
+        /* --- ESTILOS DE LA NUEVA PÁGINA: NOCHE Y CRISTAL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif; 
+        }
+
+        body {
+            /* Fondo degradado oscuro estilo noche estrellada */
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #fbbf24; /* Tono dorado/ambar */
+            text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            font-style: italic;
+        }
+
+        /* --- CONTENEDOR DE TARJETAS (ESTILO GLASSMORPHISM) --- */
+        .contenedor-cartas {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .carta-cristal {
+            /* Efecto cristal / translúcido */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, background 0.4s ease;
+            overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
+        }
+
+        .carta-cristal:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 3px solid #fbbf24;
+        }
+
+        /* --- ESTILOS PARA LAS IMÁGENES DENTRO DE LOS CUADROS --- */
+        .contenedor-imagen {
+            width: 100%;
+            height: 250px; /* Puedes cambiar este valor si quieres fotos más altas o más bajas */
+            margin-bottom: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.05); /* Fondo por si la imagen tarda en cargar */
+        }
+
+        .contenedor-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la foto llene el espacio sin deformarse */
+            transition: transform 0.5s ease;
+        }
+
+        /* Efecto de zoom en la foto al pasar el cursor por la carta */
+        .carta-cristal:hover .contenedor-imagen img {
+            transform: scale(1.05);
+        }
+
+        /* --- ESTILOS DE TEXTO DENTRO DE LA CARTA --- */
+        .carta-cristal h2 {
+            color: #fbbf24;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .carta-cristal p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- BOTÓN PARA VOLVER --- */
+        .boton-volver {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .boton-volver a {
+            text-decoration: none;
+            color: #0f172a;
+            background-color: #fbbf24;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .boton-volver a:hover {
+            background-color: #f59e0b;
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Animación inicial */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .carta-cristal { padding: 25px; }
+            .contenedor-imagen { height: 200px; } /* Imágenes un poco más pequeñas en celular */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>El Tiempo y Tú</h1>
+        <p>Reflexiones de un hombre perdidamente enamorado.</p>
+    </header>
+
+    <div class="contenedor-cartas">
+
+        <!-- Mensaje 1: El paso del tiempo y el amor exclusivo -->
+        <div class="carta-cristal">
+            <!-- AQUÍ VA LA IMAGEN 1 -->
+            <div class="contenedor-imagen">
+                <img src="images/t1.jpeg" alt="Nuestro amor en el tiempo">
+            </div>
+            <h2>Solo tú...</h2>
+            <p>
+                He estado pensando mucho últimamente, y el pasar del tiempo me ha hecho comprender algo con una claridad absoluta: mi amor te pertenece únicamente a ti. Con cada día que pasa, todo lo que siento se hace más fuerte y más firme. No importa cuánto gire el mundo, mi corazón ya encontró su lugar, y ese lugar es a tu lado.
+            </p>
+        </div>
+
+        <!-- Mensaje 2: Orgullo y admiración por su esfuerzo -->
+        <div class="carta-cristal">
+            <!-- AQUÍ VA LA IMAGEN 2 -->
+            <div class="contenedor-imagen">
+                <img src="images/t2.jpeg" alt="Mi mayor orgullo">
+            </div>
+            <h2>Mi mayor orgullo</h2>
+            <p>
+                Si pudieras verte a través de mis ojos, entenderías la enorme admiración que te tengo. Eres mi mayor orgullo. Ver la forma en la que le echas ganas a la vida, cómo enfrentas tus responsabilidades y la fuerza que tienes para salir adelante, me deja sin palabras. No solo te amo por lo dulce que eres conmigo, sino por la mujer tan trabajadora, valiente e increíble que eres todos los días.
+            </p>
+        </div>
+
+        <!-- Mensaje 3: Extrañarla por la nueva dinámica -->
+        <div class="carta-cristal">
+            <!-- AQUÍ VA LA IMAGEN 3 -->
+            <div class="contenedor-imagen">
+                <img src="images/t4.jpeg" alt="Siempre en mi mente">
+            </div>
+            <h2>La ausencia que enamora</h2>
+            <p>
+                Te juro que cada día que no paso contigo, te extraño más y más. Ahora que no podre verte a diario como antes, la distancia me pesa, pero al mismo tiempo me recuerda lo vital que eres en mi vida. Mi mente siempre te está buscando. Espero con un anhelo gigante cada momento, cada cita y cada instante en el que por fin puedo volver a tenerte frente a mí para abrazarte.
+            </p>
+        </div>
+
+        <!-- Mensaje 4: El anhelo de vivir juntos -->
+        <div class="carta-cristal">
+            <!-- AQUÍ VA LA IMAGEN 4 -->
+            <div class="contenedor-imagen">
+                <img src="images/t3.jpeg" alt="Nuestro futuro hogar">
+            </div>
+            <h2>Nuestro destino</h2>
+            <p>
+                Todo esto que siento, la forma en la que te extraño y te admiro, me lleva a un solo pensamiento: mi mayor anhelo es tenerte conmigo, viviendo juntos. Sueño con el día en que ya no tengamos que despedirnos al final del día. Deseo con toda mi alma despertar a tu lado en nuestra propia casa, construir nuestro hogar y compartir cada amanecer y cada anochecer contigo. Eres mi futura esposa, y hacia allá vamos.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Botón para regresar a la página principal -->
+    <div class="boton-volver">
+        <a href="index.html">Regresar mi vida</a>
+    </div>
+
+</body>
+</html>
