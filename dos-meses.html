@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices 2 Meses</title>
+    <style>
+        /* --- ESTILOS BOHO / ATARDECER CÁLIDO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            /* Degradado cálido estilo atardecer */
+            background: linear-gradient(120deg, #fdfbfb 0%, #ffe2d1 100%);
+            color: #4a4a4a;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- ENCABEZADO --- */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+        }
+
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            color: #d87060;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #8c7b78;
+            font-style: italic;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .contenedor-historia {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        /* --- SECCIÓN ALTERNADA (FOTO + TEXTO) --- */
+        .bloque-historia {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            gap: 40px;
+        }
+
+        /* Invierte el orden de los elementos en los bloques pares */
+        .bloque-historia:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* --- ESTILOS DE TEXTO --- */
+        .texto-historia {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(216, 112, 96, 0.1);
+            position: relative;
+        }
+
+        /* Detalle decorativo en el texto */
+        .texto-historia::before {
+            content: "✨";
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-size: 1.5rem;
+        }
+
+        .texto-historia h2 {
+            font-family: 'Georgia', serif;
+            color: #d87060;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .texto-historia p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #6d6462;
+        }
+
+        /* --- ESTILOS DE IMAGEN --- */
+        .imagen-historia {
+            flex: 1;
+            position: relative;
+        }
+
+        .marco-foto {
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 8px solid white;
+            transform: rotate(-2deg);
+            transition: transform 0.4s ease;
+        }
+
+        /* Rotación contraria para las fotos pares */
+        .bloque-historia:nth-child(even) .marco-foto {
+            transform: rotate(2deg);
+        }
+
+        .marco-foto:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .marco-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- BOTÓN DE REGRESO --- */
+        .boton-volver {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .boton-volver a {
+            text-decoration: none;
+            color: white;
+            background-color: #d87060;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(216, 112, 96, 0.3);
+        }
+
+        .boton-volver a:hover {
+            background-color: #c05c4d;
+            transform: translateY(-3px);
+        }
+
+        /* --- RESPONSIVO PARA CELULARES --- */
+        @media (max-width: 768px) {
+            .bloque-historia, .bloque-historia:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 60px;
+            }
+            .marco-foto {
+                height: 280px;
+                transform: rotate(0deg) !important; /* Quita la rotación en celulares para que se vea mejor */
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Felices Dos Meses</h1>
+        <p>Un capítulo más de nuestra historia juntos.</p>
+    </header>
+
+    <div class="contenedor-historia">
+
+        <!-- BLOQUE 1: Festejo de los 2 meses -->
+        <div class="bloque-historia">
+            <div class="texto-historia">
+                <h2>Dos meses de magia</h2>
+                <p>
+                    Mi amor, parece que fue ayer cuando todo esto comenzó, pero al mismo tiempo siento que te he amado toda la vida. Hoy cumplimos nuestros primeros dos meses y no podría estar más feliz. Gracias por cada sonrisa, por cada detalle y por dejarme descubrir cada día una nueva razón para enamorarme más de ti.
+                </p>
+            </div>
+            <div class="imagen-historia">
+                <div class="marco-foto">
+                    <!-- FOTO 1 -->
+                    <img src="images/e1.jpeg" alt="Festejando dos meses">
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 2: Ella lo salvó -->
+        <div class="bloque-historia">
+            <div class="texto-historia">
+                <h2>Mi salvavidas</h2>
+                <p>
+                    Quizá nunca te lo he dicho con estas palabras, pero llegaste a mi vida en el momento exacto. Antes de ti, las cosas eran distintas, pero al entrar a mi mundo me salvaste. Trajiste contigo una paz que no conocía, llenaste mis días de luz y le diste un propósito hermoso a mis pasos. Eres el rescate más bonito que el destino me pudo mandar.
+                </p>
+            </div>
+            <div class="imagen-historia">
+                <div class="marco-foto">
+                    <!-- FOTO 2 -->
+                    <img src="images/e2.jpeg" alt="Tú me salvaste">
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 3: Ella es su todo -->
+        <div class="bloque-historia">
+            <div class="texto-historia">
+                <h2>Eres mi todo</h2>
+                <p>
+                    Si alguien me preguntara qué significas para mí, me faltarían palabras, porque la respuesta es que eres mi todo. Eres mi motivación para levantarme temprano, mi lugar seguro cuando el día está pesado, mi paz en medio del caos y mi alegría más grande. No necesito buscar nada más en esta vida, porque en ti ya lo encontré todo.
+                </p>
+            </div>
+            <div class="imagen-historia">
+                <div class="marco-foto">
+                    <!-- FOTO 3 -->
+                    <img src="images/e3.jpeg" alt="Mi todo">
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 4: El plan de vida y la familia -->
+        <div class="bloque-historia">
+            <div class="texto-historia">
+                <h2>Nuestro futuro</h2>
+                <p>
+                    Todo el amor que siento por ti se resume en mi mayor proyecto: mi plan de vida es llenarte de amor todos los días que nos queden por delante. Quiero cuidarte, darte la vida que te mereces y, cuando sea el momento, construir contigo esa familia con la que tanto soñamos. Eres mi futura esposa y el hogar al que siempre quiero regresar.
+                </p>
+            </div>
+            <div class="imagen-historia">
+                <div class="marco-foto">
+                    <!-- FOTO 4 -->
+                    <img src="images/e4.jpeg" alt="Nuestro futuro">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTÓN PARA REGRESAR -->
+    <div class="boton-volver">
+        <a href="index.html">Regresar al inicio</a>
+    </div>
+
+</body>
+</html>
