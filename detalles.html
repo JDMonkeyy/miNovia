@@ -38,23 +38,24 @@
             font-style: italic;
         }
 
-        /* --- CONTENEDOR GRID (MÁS ANCHO PARA TARJETAS MÁS GRANDES) --- */
+        /* --- CONTENEDOR GRID --- */
         .grid-tarjetas {
-            max-width: 1100px; /* Aumentado para que quepan tarjetas más anchas */
+            max-width: 1100px; 
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tarjetas más anchas */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 40px;
             padding-bottom: 60px;
         }
 
-        /* --- EFECTO FLIP CARD (MÁS ALTA) --- */
+        /* --- EFECTO FLIP CARD --- */
         .tarjeta-flip {
             background-color: transparent;
             width: 100%;
-            height: 550px; /* Altura incrementada de 450px a 550px */
+            height: 550px; 
             perspective: 1000px; 
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent; 
         }
 
         .tarjeta-inner {
@@ -68,7 +69,8 @@
             box-shadow: 0 15px 35px rgba(17, 100, 102, 0.15);
         }
 
-        .tarjeta-flip:hover .tarjeta-inner {
+        .tarjeta-flip:hover .tarjeta-inner,
+        .tarjeta-flip.girada .tarjeta-inner {
             transform: rotateY(180deg);
         }
 
@@ -111,7 +113,7 @@
             border-radius: 15px;
         }
 
-        /* --- LADO TRASERO (IMAGEN MÁS GRANDE) --- */
+        /* --- LADO TRASERO --- */
         .tarjeta-dorso {
             background-color: white;
             color: #4a4a4a;
@@ -122,7 +124,7 @@
 
         .foto-dorso {
             width: 100%;
-            height: 260px; /* Altura incrementada de 180px a 260px para que la foto destaque */
+            height: 260px; 
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -163,8 +165,8 @@
         /* --- RESPONSIVO PARA MÓVILES --- */
         @media (max-width: 600px) {
             header h1 { font-size: 2.2rem; }
-            .tarjeta-flip { height: 600px; } /* Más altura en celular para que quepa bien el texto y la foto grande */
-            .foto-dorso { height: 230px; } /* Foto ligeramente ajustada para pantallas pequeñas */
+            .tarjeta-flip { height: 600px; } 
+            .foto-dorso { height: 230px; } 
         }
     </style>
 </head>
@@ -172,7 +174,7 @@
 
     <header>
         <h1>Las cosas que no te digo</h1>
-        <p>Gira las tarjetas para descubrir lo que veo en ti.</p>
+        <p>Toca las tarjetas para descubrir lo que veo en ti.</p>
     </header>
 
     <div class="grid-tarjetas">
@@ -187,7 +189,7 @@
                 </div>
                 <div class="tarjeta-dorso">
                     <div class="foto-dorso">
-                        <img src="images/d3.jpeg" alt="Detalles">
+                        <img src="images/d1.jpeg" alt="Detalles">
                     </div>
                     <p>Siempre te digo que te amo, pero no sé si te digo lo suficiente cuánto me encantan tus pequeños detalles. Me fascina verte cuando estás concentrada, la forma en la que te esfuerzas por las cosas y cómo tu sonrisa ilumina hasta el día más gris. En esas pequeñas cosas que haces sin darte cuenta, yo encuentro mi magia favorita.</p>
                 </div>
@@ -221,7 +223,7 @@
                 </div>
                 <div class="tarjeta-dorso">
                     <div class="foto-dorso">
-                        <img src="images/d1.jpeg" alt="Tal como eres">
+                        <img src="images/d3.jpeg" alt="Tal como eres">
                     </div>
                     <p>No amo solo a la versión tuya que está feliz o arreglada. Amo a la mujer que se desvela haciendo tareas, a la que llega cansada del trabajo, a la que a veces se estresa. Amo absolutamente todas tus facetas porque te hacen real. Mi amor por ti no exige perfección, solo te exige a ti, completita y tal cual eres.</p>
                 </div>
@@ -251,5 +253,13 @@
         <a href="index.html">Volver al inicio</a>
     </div>
 
+    <script>
+        const tarjetas = document.querySelectorAll('.tarjeta-flip');
+        tarjetas.forEach(tarjeta => {
+            tarjeta.addEventListener('click', function() {
+                this.classList.toggle('girada');
+            });
+        });
+    </script>
 </body>
 </html>

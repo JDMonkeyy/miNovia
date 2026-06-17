@@ -3,263 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tus Pequeños Detalles</title>
-    <style>
-        /* --- ESTILOS FRESCOS: MENTA Y CREMA --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #f2edd7; 
-            color: #333;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        header h1 {
-            color: #116466; 
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            color: #666;
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-
-        /* --- CONTENEDOR GRID --- */
-        .grid-tarjetas {
-            max-width: 1100px; 
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 40px;
-            padding-bottom: 60px;
-        }
-
-        /* --- EFECTO FLIP CARD --- */
-        .tarjeta-flip {
-            background-color: transparent;
-            width: 100%;
-            height: 550px; 
-            perspective: 1000px; 
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent; 
-        }
-
-        .tarjeta-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(17, 100, 102, 0.15);
-        }
-
-        .tarjeta-flip:hover .tarjeta-inner,
-        .tarjeta-flip.girada .tarjeta-inner {
-            transform: rotateY(180deg);
-        }
-
-        .tarjeta-frente, .tarjeta-dorso {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden; 
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
-
-        /* --- LADO FRONTAL --- */
-        .tarjeta-frente {
-            background: linear-gradient(135deg, #d1e8e2 0%, #a4d4cc 100%); 
-            color: #116466;
-        }
-
-        .tarjeta-frente h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .icono-frente {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .instruccion {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-top: 20px;
-            background-color: rgba(255,255,255,0.4);
-            padding: 5px 15px;
-            border-radius: 15px;
-        }
-
-        /* --- LADO TRASERO --- */
-        .tarjeta-dorso {
-            background-color: white;
-            color: #4a4a4a;
-            transform: rotateY(180deg);
-            border: 2px solid #a4d4cc;
-            justify-content: flex-start;
-        }
-
-        .foto-dorso {
-            width: 100%;
-            height: 260px; 
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .foto-dorso img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .tarjeta-dorso p {
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* --- BOTÓN VOLVER --- */
-        .boton-volver {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .boton-volver a {
-            text-decoration: none;
-            color: white;
-            background-color: #116466;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .boton-volver a:hover {
-            background-color: #2c7873;
-        }
-
-        /* --- RESPONSIVO PARA MÓVILES --- */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.2rem; }
-            .tarjeta-flip { height: 600px; } 
-            .foto-dorso { height: 230px; } 
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Para Mi Persona Favorita</title>
 </head>
 <body>
 
     <header>
-        <h1>Las cosas que no te digo</h1>
-        <p>Toca las tarjetas para descubrir lo que veo en ti.</p>
+        <h1>Para la niña más bonita del mundo</h1>
+        <p>Un pequeño espacio dedicado a todo lo que me haces sentir</p>
+        <div class="corazon-decorativo">❤️</div>
     </header>
 
-    <div class="grid-tarjetas">
+    <div class="contenedor">
 
-        <!-- TARJETA 1 -->
-        <div class="tarjeta-flip">
-            <div class="tarjeta-inner">
-                <div class="tarjeta-frente">
-                    <div class="icono-frente">✨</div>
-                    <h2>Tu magia cotidiana</h2>
-                    <div class="instruccion">Toca para girar</div>
+        <div class="seccion-mensaje">
+            <h2>Mi mayor orgullo</h2>
+            <p>
+                Quiero que sepas que admiro profundamente la dedicación y la fuerza que le pones a todo lo que haces en tu día a día. 
+                Sé lo pesado que puede ser el estudio y el cansancio de los desvelos, pero ver tu empeño solo me hace sentir el novio 
+                más orgulloso del mundo. Gracias por ser tan linda conmigo incluso en tus días más agotadores; aquí siempre vas a tener un refugio seguro para descansar 
+                y recargar energías.
+
+            </p>
+            <div class="marco-polaroid">
+                <div class="espacio-foto">
+
+                    <img src="images/1.jpeg" alt="Momento juntos 1">
                 </div>
-                <div class="tarjeta-dorso">
-                    <div class="foto-dorso">
-                        <img src="images/d1.jpeg" alt="Detalles">
-                    </div>
-                    <p>Siempre te digo que te amo, pero no sé si te digo lo suficiente cuánto me encantan tus pequeños detalles. Me fascina verte cuando estás concentrada, la forma en la que te esfuerzas por las cosas y cómo tu sonrisa ilumina hasta el día más gris. En esas pequeñas cosas que haces sin darte cuenta, yo encuentro mi magia favorita.</p>
-                </div>
+                <div class="pie-foto">Te amo</div>
             </div>
         </div>
 
-        <!-- TARJETA 2 -->
-        <div class="tarjeta-flip">
-            <div class="tarjeta-inner">
-                <div class="tarjeta-frente">
-                    <div class="icono-frente">🌿</div>
-                    <h2>Mi mayor motor</h2>
-                    <div class="instruccion">Toca para girar</div>
-                </div>
-                <div class="tarjeta-dorso">
-                    <div class="foto-dorso">
-                        <img src="images/d2.jpeg" alt="Mi motor">
-                    </div>
-                    <p>Ahora que enfrento nuevos retos fuera de la escuela y busco construir mi camino profesional, saber que te tengo a mi lado lo cambia todo. Eres mi inspiración para buscar oportunidades y crecer. Cuando siento que el mundo real es pesado, te miro y recuerdo exactamente por quién y para qué estoy construyendo este futuro.</p>
-                </div>
-            </div>
+        <div class="seccion-mensaje">
+            <h2>Mi mayor miedo</h2>
+            <p>
+                A veces me quedo mirándote y, siendo completamente honesto, me da un poco de miedo. 
+                Me da miedo no ser suficiente o no poder darte todo lo que te mereces, porque eres una mujer tan increíble,
+                trabajadora y valiosa que siento que el mundo entero te queda chico. Pero quiero que sepas que, a pesar de cualquier temor,
+                mi amor por ti es más grande que todo lo demás. Puede que no tenga el mundo en mis manos para regalártelo justo ahora, 
+                pero lo que sí tienes es mi promesa de esforzarme cada día, de ser tu apoyo incondicional y de amarte con una fuerza y 
+                una sinceridad que nunca van a fallar. Te amo demasiado, hoy y siempre.
+            </p>
         </div>
 
-        <!-- TARJETA 3 -->
-        <div class="tarjeta-flip">
-            <div class="tarjeta-inner">
-                <div class="tarjeta-frente">
-                    <div class="icono-frente">🤍</div>
-                    <h2>Exactamente como eres</h2>
-                    <div class="instruccion">Toca para girar</div>
+        <!-- GALERÍA DE MARCOS POLAROID -->
+        <h2 class="titulo-galeria">Nuestros Momentos Favoritos</h2>
+        
+        <div class="galeria-marcos">
+            
+            <!-- Marco 1 -->
+            <div class="marco-polaroid">
+                <div class="espacio-foto">
+
+                    <img src="images/2.jpeg"Momento juntos 1">
                 </div>
-                <div class="tarjeta-dorso">
-                    <div class="foto-dorso">
-                        <img src="images/d3.jpeg" alt="Tal como eres">
-                    </div>
-                    <p>No amo solo a la versión tuya que está feliz o arreglada. Amo a la mujer que se desvela haciendo tareas, a la que llega cansada del trabajo, a la que a veces se estresa. Amo absolutamente todas tus facetas porque te hacen real. Mi amor por ti no exige perfección, solo te exige a ti, completita y tal cual eres.</p>
-                </div>
+                <div class="pie-foto">Tu sonrisa favorita.</div>
             </div>
+
+            <!-- Marco 2 -->
+            <div class="marco-polaroid">
+                <div class="espacio-foto">
+
+                    <img src="images/3.jpeg" alt="Momento juntos 2">
+                </div>
+                <div class="pie-foto">TWINS</div>
+            </div>
+
+            <!-- Marco 3 -->
+            <div class="marco-polaroid">
+                <div class="espacio-foto">
+                    <img src="images/4.jpeg" alt="Momento juntos 3">
+                </div>
+                <div class="pie-foto">Mi lugar seguro. ❤️</div>
+            </div>
+
         </div>
 
-        <!-- TARJETA 4 -->
-        <div class="tarjeta-flip">
-            <div class="tarjeta-inner">
-                <div class="tarjeta-frente">
-                    <div class="icono-frente">🏠</div>
-                    <h2>Mi paz absoluta</h2>
-                    <div class="instruccion">Toca para girar</div>
-                </div>
-                <div class="tarjeta-dorso">
-                    <div class="foto-dorso">
-                        <img src="images/d4.jpeg" alt="Mi paz">
-                    </div>
-                    <p>El mundo puede estar yendo a mil por hora, lleno de preocupaciones y pendientes, pero en el instante en el que me tomas la mano o me abrazas, todo se silencia. No solo te veo como mi futura esposa, sino como mi refugio personal. Gracias por ser el lugar donde mi mente descansa y mi corazón se siente seguro.</p>
-                </div>
-            </div>
+        <div class="seccion-futuro">
+            <h2>Una promesa para el futuro</h2>
+            <p>
+                Quiero que sepas con total certeza que te elijo hoy, mañana y para toda la vida. Eres la persona con la que 
+                sueño formar un hogar, mi futura esposa y el amor de mi vida entera. Siempre estaré aquí para apoyarte en cada paso.TE AMOOOOO...
+            </p>
         </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="tiempo.html" style="text-decoration: none; background-color: var(--color-secundario); color: white; padding: 10px 20px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4); transition: transform 0.3s ease;">T</a>
+            <a href="dos-meses.html" style="text-decoration: none; background-color: var(--color-secundario); color: white; padding: 10px 20px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4); transition: transform 0.3s ease;">E</a>
+            <a href="detalles.html" style="text-decoration: none; background-color: var(--color-secundario); color: white; padding: 10px 20px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4); transition: transform 0.3s ease;">A</a>
+        </div>
+        
 
     </div>
 
-    <div class="boton-volver">
-        <a href="index.html">Volver al inicio</a>
-    </div>
-
-    <script>
-        const tarjetas = document.querySelectorAll('.tarjeta-flip');
-        tarjetas.forEach(tarjeta => {
-            tarjeta.addEventListener('click', function() {
-                this.classList.toggle('girada');
-            });
-        });
-    </script>
 </body>
 </html>
