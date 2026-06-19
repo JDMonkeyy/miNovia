@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Destino Juntos</title>
+    <style>
+        /* --- ESTILOS LÍNEA DEL TIEMPO: CAFÉ Y ORO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: #faf7f2; /* Crema orgánico */
+            color: #4a3b32; /* Café oscuro */
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #6e473b;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #8a7365;
+            font-style: italic;
+        }
+
+        /* --- CONTENEDOR DE LA LÍNEA DEL TIEMPO --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Línea vertical central */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #d4af37; /* Color Oro */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            opacity: 0.4;
+        }
+
+        /* Contenedores de los bloques */
+        .bloque-timeline {
+            padding: 10px 40px;
+            position: relative;
+            background-color: transparent;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        /* Clase activa que se disparará al hacer scroll */
+        .bloque-timeline.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Posicionamiento Izquierda y Derecha */
+        .izquierda { left: 0; text-align: right; }
+        .derecha { left: 50%; text-align: left; }
+
+        /* Círculos decorativos en la línea central */
+        .bloque-timeline::after {
+            content: '✨';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -14px;
+            top: 25px;
+            z-index: 1;
+            font-size: 0.9rem;
+        }
+
+        .derecha::after { left: -10px; }
+
+        /* --- CONTENIDO DE LAS TARJETAS --- */
+        .tarjeta-timeline {
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(110, 71, 59, 0.05);
+            border: 1px solid #f0e6df;
+        }
+
+        .tarjeta-timeline h2 {
+            color: #c29545; /* Oro apagado */
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta-timeline p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #5c4d44;
+        }
+
+        /* --- ESPACIO PARA FOTOS --- */
+        .foto-timeline {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #f0e6df;
+        }
+
+        .foto-timeline img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- BOTÓN VOLVER --- */
+        .boton-volver {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .boton-volver a {
+            text-decoration: none;
+            color: white;
+            background-color: #6e473b;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            transition: background 0.3s ease;
+        }
+
+        .boton-volver a:hover {
+            background-color: #8c6239;
+        }
+
+        /* --- RESPONSIVO PARA MÓVILES --- */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 31px; } /* Mueve la línea a la izquierda */
+            .bloque-timeline {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left !important;
+            }
+            .bloque-timeline::after {
+                left: 20px;
+                right: auto;
+            }
+            .derecha { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>El Hilo de Nuestro Destino</h1>
+        <p>Cómo pasaste de ser mi pensamiento favorito, a ser mi vida entera.</p>
+    </header>
+
+    <div class="timeline">
+
+        <div class="bloque-timeline izquierda">
+            <div class="tarjeta-timeline">
+                <div class="foto-timeline">
+                    <img src="images/s1.jpeg" alt="Cuando eras mi crush">
+                </div>
+                <h2>El Origen: Mi crush inalcanzable</h2>
+                <p>
+                    Me detengo a pensar en el pasado y no puedo evitar sonreír. Hubo un tiempo en el que la única posibilidad que veía de estar contigo era a través de un mensaje ocasional o pláticas muy por encima. Para mí, eras esa niña hermosa e inalcanzable de los pasillos; no porque fueras distante, sino porque simplemente no creía que alguien como yo te pudiera gustar. Qué increíble saber que cada esfuerzo valió la pena y que hoy puedo tomar tu mano.
+                </p>
+            </div>
+        </div>
+
+        <div class="bloque-timeline derecha">
+            <div class="tarjeta-timeline">
+                <div class="foto-timeline">
+                    <img src="images/s2.jpeg" alt="Nuestro amor puro">
+                </div>
+                <h2>El Presente: Un amor puro y genuino</h2>
+                <p>
+                    Hoy despierto y mi realidad es la más hermosa gracias a ti. No hay un solo día en el que no agradezca el amor tan puro y transparente que me demuestras. Nadie en este mundo me había cuidado ni querido de una forma tan real. Saber que tú te sientes igual de amada y protegida por mí es mi mayor satisfacción. Eres mi prioridad absoluta, amor.
+                </p>
+            </div>
+        </div>
+
+        <div class="bloque-timeline izquierda">
+            <div class="tarjeta-timeline">
+                <div class="foto-timeline">
+                    <img src="images/s3.jpeg" alt="Construyendo el futuro">
+                </div>
+                <h2>El Mañana: El motor de mis esfuerzos</h2>
+                <p>
+                    Mi plan de vida contigo no es una fantasía; empezó desde el primer segundo en que decidimos entrelazar nuestros destinos. Por eso hoy tengo las metas tan claras: quiero enfocarme en mi trabajo, empezar a juntar dinero, salir adelante y construir bases sólidas. Cada gota de mi esfuerzo diario tiene un norte muy claro, y ese norte es darte el futuro que te mereces.
+                </p>
+            </div>
+        </div>
+
+        <div class="bloque-timeline derecha">
+            <div class="tarjeta-timeline">
+                <div class="foto-timeline">
+                    <img src="images/s4.jpeg" alt="Nuestro hogar siempre">
+                </div>
+                <h2>El Destino: Quedarnos para siempre</h2>
+                <p>
+                    No hay nada más que desee en este mundo que formar mi vida entera a tu lado y ver el día en que compartamos el mismo techo de manera definitiva. Por eso, con toda la sinceridad y vulnerabilidad de mi corazón, te pido que te quedes. Quédate a llenar mis días de amor, quédate a construir esa familia que tanto soñamos, porque tú eres, y siempre serás, mi mundo entero.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="boton-volver">
+        <a href="index.html">Volver al inicio</a>
+    </div>
+
+    <script>
+        const bloques = document.querySelectorAll('.bloque-timeline');
+
+        function checkScroll() {
+            const triggerBottom = window.innerHeight * 0.85; // Dispara la animación un poco antes de llegar al bloque
+
+            bloques.forEach(bloque => {
+                const bloqueTop = bloque.getBoundingClientRect().top;
+
+                if(bloqueTop < triggerBottom) {
+                    bloque.classList.add('visible');
+                }
+            });
+        }
+
+        // Ejecutar al cargar la página y al hacer scroll
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+    </script>
+</body>
+</html>
